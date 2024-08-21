@@ -16,14 +16,20 @@ const port = process.env.PORT || 8000;
 
 const corsOptions = {
   origin: "*",
-  credential: true,
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
 
+// Middleware
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors(corsOptions));
+
 app.get("/", (req, res) => {
-  res.send("Api is working");
+  res.send("API is working");
 });
-// databse connection
+
+// Database connection
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
@@ -34,20 +40,33 @@ const connectDB = async () => {
     console.log("MongoDB database is connected");
   } catch (err) {
     console.log("MongoDB database connection failed", err);
+    throw err; // Rethrow to stop the server start
   }
 };
 
-// middleware
-app.use(express.json()); // for parsing application/json content type
-app.use(cookieParser());
-app.use(cors(corsOptions));
-app.use("/api/v1/auth", authRoute); // domain/api/v1/auth/register
+// Routes
+app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/workers", workerRoute);
 app.use("/api/v1/reviews", reviewRoute);
 app.use("/api/v1/bookings", bookingRoute);
 
-app.listen(port, () => {
-  connectDB();
-  console.log("server is running on port" + port);
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
 });
+
+// Start server
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  } catch (err) {
+    console.log("Failed to connect to the database, server not started.");
+  }
+};
+
+startServer();

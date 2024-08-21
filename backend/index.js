@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://workmatefrontend-prathhm08s-projects.vercel.app/",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };

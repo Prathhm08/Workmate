@@ -7,7 +7,6 @@ import {
   getUserProfile,
   getMyAppointments,
 } from "../Controllers/userController.js";
-
 import { authenticate, restrict } from "../auth/verifyToken.js";
 
 const router = express.Router();

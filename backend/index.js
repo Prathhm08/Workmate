@@ -20,7 +20,6 @@ const corsOptions = {
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
 
-// Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
@@ -29,7 +28,6 @@ app.get("/", (req, res) => {
   res.send("API is working");
 });
 
-// Database connection
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
@@ -40,24 +38,23 @@ const connectDB = async () => {
     console.log("MongoDB database is connected");
   } catch (err) {
     console.log("MongoDB database connection failed", err);
-    throw err; // Rethrow to stop the server start
+    throw err;
   }
 };
 
-// Routes
+// Route
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/workers", workerRoute);
 app.use("/api/v1/reviews", reviewRoute);
 app.use("/api/v1/bookings", bookingRoute);
 
-// Error handling middleware
+// Middleware to handle errors
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something went wrong!");
 });
 
-// Start server
 const startServer = async () => {
   try {
     await connectDB();

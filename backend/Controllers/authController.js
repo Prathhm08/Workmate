@@ -26,7 +26,7 @@ export const register = async (req, res) => {
       return res.status(400).json({ message: "User already exits" });
     }
 
-    // hash the password for security
+    // hashing the password
 
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(password, salt);
@@ -78,13 +78,12 @@ export const login = async (req, res) => {
     if (worker) {
       user = worker;
     }
-    // check if user exits or not
+    // user existence
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // compare password
     const isPasswordMatch = await bcrypt.compare(
       req.body.password,
       user.password
@@ -95,8 +94,6 @@ export const login = async (req, res) => {
         .status(401)
         .json({ status: false, message: "Invalid creditails" });
     }
-
-    // get token
 
     const token = generateToken(user);
 

@@ -11,7 +11,7 @@ const WorkerSchema = new mongoose.Schema({
     type: String,
   },
 
-  // Fields for doctors only
+  // Fields for workers only
   specialization: { type: String },
   qualifications: {
     type: Array,

@@ -31,7 +31,7 @@ export const getCheckoutSession = async (req, res) => {
         },
       ],
     });
-
+    //creates new booking
     const booking = new Booking({
       worker: worker._id,
       user: user._id,

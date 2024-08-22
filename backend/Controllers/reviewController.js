@@ -1,8 +1,6 @@
 import Review from "../models/ReviewSchema.js";
 import Worker from "../models/WorkerSchema.js";
 
-//get all reviews
-
 export const getAllReviews = async (req, res) => {
   try {
     const reviews = await Review.find({});
@@ -14,8 +12,6 @@ export const getAllReviews = async (req, res) => {
     res.status(404).json({ success: false, message: "not found" });
   }
 };
-
-//create review function
 
 export const createReview = async (req, res) => {
   if (!req.body.worker) req.body.worker = req.params.workerId;

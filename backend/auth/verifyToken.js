@@ -3,9 +3,7 @@ import Worker from "../models/WorkerSchema.js";
 import User from "../models/UserSchema.js";
 
 export const authenticate = async (req, res, next) => {
-  // get token from headers
   const authToken = req.headers.authorization;
-  // check is token exits or not
 
   if (!authToken) {
     return res

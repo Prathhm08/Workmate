@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { formateDate } from "../../utils/formatDate";
+import avatar from "../../assets/images/avatar.png";
 
 const Appointments = ({ appointments }) => {
   return (
@@ -31,7 +32,7 @@ const Appointments = ({ appointments }) => {
               className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap gap-2 text-center"
             >
               <img
-                src={item.user.photo}
+                src={item.user.photo || avatar}
                 className="w-10 h-10 rounded-full"
                 alt=""
               />

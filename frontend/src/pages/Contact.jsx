@@ -5,23 +5,15 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  // const [showMessage, setShowMessage] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Your code for handling the form submission can go here
-    // For example, you can send the form data to a server or perform validation
-
-    // After handling the submission, set showMessage to true and clear the form fields.
-    // setShowMessage(true);
     setEmail("");
     setSubject("");
     setMessage("");
 
     toast.success("Thanks For Contacting Us", {
-      position: "top-center", // You can customize the position
-      autoClose: 2000, // The message will auto-close after 3 seconds
+      position: "top-center",
+      autoClose: 2000,
     });
   };
 

@@ -20,12 +20,10 @@ import Testimonials from "../components/Testimonial/Testimonials";
 
 const Home = () => {
   return (
-    //  ------Hero Section----
     <>
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
-            {/* hero content */}
             <div className="lg:w-[570px]">
               <h1
                 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] 
@@ -40,9 +38,6 @@ const Home = () => {
                 are met with efficiency and care.
               </p>
               <button className="btn">Request a Booking</button>
-
-              {/* ----Hero Counter----- */}
-
               <div
                 className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5
     text-headingColor "
@@ -98,8 +93,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* ---hero_section_end--- */}
 
       <section>
         <div className="container">
@@ -195,13 +188,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section start---- */}
-
       <About />
 
-      {/* About Section end---- */}
-
-      {/* --services-section-start-- */}
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
@@ -216,14 +204,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --services-section-end-- */}
-
-      {/* Feature_section_start */}
-
       <section>
         <div className="container">
           <div className="flex items-center justify-between flex-col lg:flex-row ">
-            {/* __feature-Content__ */}
             <div className="xl:w-[670px]">
               <h2 className="heading">
                 Get Assistance <br />
@@ -245,7 +228,6 @@ const Home = () => {
               </Link>
             </div>
 
-            {/* ---Feature-Image--- */}
             <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
               <img src={featureImg} className="w-3/4" alt="" />
 
@@ -298,8 +280,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Feature_section_end */}
-      {/* Our great workers */}
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
@@ -317,10 +297,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Out great Worker end*/}
-
-      {/* FAQ section-------start */}
-
       <section>
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
@@ -336,10 +312,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* FAQ section-------end */}
-
-      {/* ----Testimonial section start----- */}
 
       <section>
         <div className="container">
@@ -357,8 +329,6 @@ const Home = () => {
           <Testimonials />
         </div>
       </section>
-
-      {/* ----Testimonial section end----- */}
     </>
   );
 };

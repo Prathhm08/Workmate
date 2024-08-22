@@ -9,6 +9,7 @@ import {
   AiOutlineInstagram,
 } from "react-icons/ai";
 
+// creating social links
 const socialLinks = [
   {
     path: "#",
@@ -28,6 +29,7 @@ const socialLinks = [
   },
 ];
 
+//creating navbar links
 const quickLinks01 = [
   {
     path: "/home",
@@ -40,10 +42,6 @@ const quickLinks01 = [
   {
     path: "/services",
     display: "Services",
-  },
-  {
-    path: "/blog",
-    display: "Blog",
   },
 ];
 

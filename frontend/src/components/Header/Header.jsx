@@ -67,14 +67,11 @@ const Header = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between ">
-          {/* -------logo------ */}
-
           <Link to="/home">
             <div>
               <img src={logo} alt="" />
             </div>
           </Link>
-          {/* =======menu===== */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-[2.7rem]">
               {navLinks.map((link, index) => (
@@ -94,9 +91,6 @@ const Header = () => {
               ))}
             </ul>
           </div>
-
-          {/* ----- Nav Right--- */}
-
           <div className="flex items-center gap-4">
             {token && user ? (
               <div className="flex items-center justify-center">

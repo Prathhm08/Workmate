@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import { faqs } from "../../assets/data/faqs";
 import FaqItem from "./FaqItem";
 const FaqList = () => {

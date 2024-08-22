@@ -150,8 +150,6 @@ const Testimonials = () => {
             </p>
           </div>
         </SwiperSlide>
-
-        {/* Additional SwiperSlides here... */}
       </Swiper>
     </div>
   );

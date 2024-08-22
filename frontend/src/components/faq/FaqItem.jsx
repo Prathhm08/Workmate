@@ -4,11 +4,9 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const FaqItem = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className="p-3 lg:p-5 rounded-[10px] border border-solid border-[#D9DCE2] mb-5 cursor-pointer">
       <div
@@ -27,7 +25,6 @@ const FaqItem = ({ item }) => {
           {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </div>
       </div>
-
       {isOpen && (
         <div className="mt-4">
           <p className="text-[px] leading-6 lg:text-[16px] lg:leading-7 font-[400] text-textColor">

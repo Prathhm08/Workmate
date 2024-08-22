@@ -79,8 +79,6 @@ const Signup = () => {
             </figure>
           </div>
 
-          {/* -----signup form---- */}
-
           <div className="rounded-l-lg lg:pl-16 py-10">
             <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
               Create an

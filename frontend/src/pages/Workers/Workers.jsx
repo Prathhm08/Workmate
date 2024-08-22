@@ -1,6 +1,4 @@
-//  import React from 'react'
 import Workercard from "../../components/Workers/WorkerCard";
-// import { workers } from "../../assets/data/workers";
 import Testimonials from "../../components/Testimonial/Testimonials";
 import { BASE_URL } from "../../config";
 import useFetchData from "../../hooks/useFetchData";
@@ -33,6 +31,7 @@ const Workers = () => {
           <h2 className="heading">Find a Worker</h2>
           <div className="max-w-[570px] mt-[30px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
             <input
+              id="search-worker"
               type="search"
               className="py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none
               cursor-pointer placeholder:text-textColor"

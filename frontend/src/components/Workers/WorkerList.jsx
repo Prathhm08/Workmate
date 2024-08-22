@@ -1,6 +1,5 @@
 import Workercard from "./WorkerCard";
 import { BASE_URL } from "../../config";
-// import { workers } from "../../assets/data/workers";
 import useFetchData from "../../hooks/useFetchData";
 import Loader from "../Loader/Loading";
 import Error from "../Error/Error";

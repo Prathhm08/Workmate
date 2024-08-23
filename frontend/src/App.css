@@ -48,12 +48,9 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 100;
   background: white;
   box-shadow: 3px 3px -8px 3px #ddd;
-}
-.Toastify__toast-container {
-  z-index: 9999;
 }
 @media only screen and (max-width: 768px) {
   .navigation {
